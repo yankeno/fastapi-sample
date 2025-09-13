@@ -1,0 +1,25 @@
+[project]
+name = "fastapi-sample"
+version = "0.1.0"
+description = "FastAPI sample application"
+requires-python = ">=3.9"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pymysql",
+    "cryptography",
+    "python-dotenv",
+    "requests==2.32.5",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = []
+
+[tool.uv.sources]
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]
