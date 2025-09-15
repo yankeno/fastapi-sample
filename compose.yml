@@ -7,24 +7,20 @@ services:
       - "8001:8000"
     volumes:
       - ./app:/app
-      - ./.env:/app/.env
     depends_on:
       - db
-    env_file:
-      - .env
-
   db:
     image: mysql:8.0
     container_name: db
     environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: sampledb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: fastapi
     ports:
       - "3306:3306"
     volumes:
       - mysql_data:/var/lib/mysql
-    env_file:
-      - .env
 
 volumes:
   mysql_data:

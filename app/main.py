@@ -15,14 +15,12 @@ def read_root():
 @app.get("/db-health")
 def check_database_connection():
     try:
-        # .envファイルから設定を取得
         host = os.getenv("DB_HOST", "db")
         port = int(os.getenv("DB_PORT", "3306"))
         username = os.getenv("DB_USER", "root")
         password = os.getenv("DB_PASSWORD", "password")
         database = os.getenv("DB_NAME", "sampledb")
         
-        # MySQL接続テスト
         connection = pymysql.connect(
             host=host,
             port=port,
