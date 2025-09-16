@@ -1,0 +1,4 @@
+{
+  "python.defaultInterpreterPath": "./app/.venv/bin/python",
+  "python.analysis.extraPaths": ["./app/.venv/lib/python3.9/site-packages"]
+}
